@@ -1,0 +1,13 @@
+/*#root{
+-fx-background-color: linear-gradient(to top , #ff7700, #096087, #e7bc4b);
+    background-color: #FBDA61;
+    background-color: #21D4FD;
+    background-image: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
+
+
+}*/
+.text-field{
+
+    -fx-text-fill: #0a0202;
+    font-family: 'Arial';
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="447.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.CourseFormController">
+   <children>
+      <ImageView fx:id="lbllogo" fitHeight="84.0" fitWidth="87.0" layoutX="2.0" layoutY="1.0" onMouseClicked="#MouseClickOnAction" onMouseEntered="#MouseEnterOnAction" onMouseExited="#MouseExitOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/logo.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="134.0" layoutY="5.0" prefHeight="53.0" prefWidth="467.0" text="Welcome to  Royal Institute_Course">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#1622c9" />
+                  <Stop color="#d31e1e" offset="0.9961685823754789" />
+                  <Stop color="#d31e1e" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bell MT" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="106.0" text="Course Code">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtcode" layoutX="113.0" layoutY="95.0" onAction="#txtCourseSearchOnAction" prefHeight="25.0" prefWidth="151.0" />
+      <Label layoutX="278.0" layoutY="106.0" text="Course Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtname" layoutX="377.0" layoutY="95.0" prefHeight="25.0" prefWidth="257.0" />
+      <Label layoutX="14.0" layoutY="146.0" prefHeight="21.0" prefWidth="115.0" text="Course Fee(LKR)">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtfee" layoutX="135.0" layoutY="135.0" prefHeight="25.0" prefWidth="201.0" />
+      <Label layoutX="360.0" layoutY="143.0" text="Course Duration">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtduration" layoutX="481.0" layoutY="133.0" onAction="#txtDurationEnterOnAction" prefHeight="25.0" prefWidth="151.0" />
+      <JFXButton fx:id="btnsave" alignment="CENTER" buttonType="RAISED" layoutX="577.0" layoutY="190.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #2ded3d; -fx-background-radius: 10;" text="Save">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btndelete" alignment="CENTER" buttonType="RAISED" layoutX="487.0" layoutY="190.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #e36a2d; -fx-background-radius: 10;" text="Delete">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnupdate" alignment="CENTER" buttonType="RAISED" layoutX="398.0" layoutY="191.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #d6d941; -fx-background-radius: 10;" text="Update">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnnew" alignment="CENTER" buttonType="RAISED" layoutX="585.0" layoutY="55.0" onAction="#btnNewOnAction" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #07bfed; -fx-background-radius: 10;" text="New +">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblcourse" layoutX="12.0" layoutY="247.0" prefHeight="183.0" prefWidth="673.0">
+        <columns>
+          <TableColumn fx:id="colno" prefWidth="60.0" text="No" />
+          <TableColumn fx:id="colcode" prefWidth="121.0" text="Course Code" />
+            <TableColumn fx:id="colname" prefWidth="206.0" text="Course Name" />
+            <TableColumn fx:id="colfee" prefWidth="174.0" text="Course Fee (LKR)" />
+            <TableColumn fx:id="colduration" prefWidth="110.0" text="Course Deuration" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtsearch" layoutX="22.0" layoutY="197.0" prefHeight="25.0" prefWidth="306.0" promptText="Search here" />
+      <Separator layoutX="44.0" layoutY="234.0" prefHeight="7.0" prefWidth="636.0" />
+   </children>
+</AnchorPane>

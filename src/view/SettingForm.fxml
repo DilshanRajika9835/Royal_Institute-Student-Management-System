@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="447.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.SettingFormController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="697.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#CloseOnAction" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Setting">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ChangePasswordOnAction" text="password" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help" />
+            <Menu mnemonicParsing="false" text="view">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#AboutOnAction" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#UserOnAction" text="User" />
+                  <MenuItem mnemonicParsing="false" onAction="#LoginOnAction" text="Login" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="421.0" fitWidth="697.0" layoutY="26.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/background.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="loginpane" layoutX="211.0" layoutY="45.0" opacity="0.89" prefHeight="333.0" prefWidth="237.0" style="-fx-background-color: linear-gradient(to bottom, #FBDA61 0%, #FF5ACD 100%); -fx-background-radius: 30;">
+         <children>
+            <JFXTextField fx:id="txtusername" focusColor="#164ae4" labelFloat="true" layoutX="30.0" layoutY="112.0" onKeyReleased="#txtkeyReleasedOnAction" prefHeight="25.0" prefWidth="183.0" promptText=" UserName">
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#250fb9" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+               <font>
+                  <Font name="Bell MT" size="12.0" />
+               </font>
+            </JFXTextField>
+            <Circle fx:id="circleprofile" fill="#1f93ff36" layoutX="117.0" layoutY="53.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
+            <JFXPasswordField fx:id="txtprviouspassword" layoutX="30.0" layoutY="149.0" onKeyReleased="#txtkeyReleasedOnAction" prefHeight="25.0" prefWidth="183.0" promptText="perivious Password">
+               <font>
+                  <Font name="Bell MT" size="12.0" />
+               </font></JFXPasswordField>
+            <JFXPasswordField fx:id="txtnewpassword" layoutX="31.0" layoutY="213.0" prefHeight="25.0" prefWidth="183.0" promptText="New Password">
+               <font>
+                  <Font name="Bell MT" size="12.0" />
+               </font></JFXPasswordField>
+            <ImageView fx:id="lblcamer" fitHeight="25.0" fitWidth="28.0" layoutX="133.0" layoutY="78.0" onMouseClicked="#lblChangeprofile" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/camer.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXButton fx:id="btnconform" buttonType="RAISED" layoutX="42.0" layoutY="247.0" onAction="#btnConformOnAction" prefHeight="40.0" prefWidth="142.0" style="-fx-background-color: linear-gradient(to left, #21D4FD 0%, #B721FF 100%); -fx-background-radius: 20;" text="Conform" textFill="#fcecec">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font></JFXButton>
+            <Label fx:id="lblmessage" layoutX="9.0" layoutY="286.0" prefHeight="32.0" prefWidth="223.0" text="Your  are password has Change Successfully!" textFill="#2a16e1">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblwarning1" layoutX="34.0" layoutY="176.0" text="invalid user name or password" textFill="#eb0808">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btncheck" buttonType="RAISED" layoutX="165.0" layoutY="187.0" onAction="#btnCheckOnAction" style="-fx-background-color: green;" text="Check" textFill="#ebeaea">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <TableView fx:id="tbllogin" layoutX="28.0" layoutY="45.0" opacity="0.83" prefHeight="384.0" prefWidth="635.0" visible="false">
+        <columns>
+          <TableColumn fx:id="colLogNo" prefWidth="51.0" text="No" />
+          <TableColumn fx:id="colLogUserName" prefWidth="107.0" text="User_Name" />
+            <TableColumn fx:id="colLogPassword" prefWidth="130.0" text="Password" />
+            <TableColumn fx:id="colLogDate" prefWidth="97.0" text="Login_Date" />
+            <TableColumn fx:id="colLogTime" prefWidth="93.0" text="Login_Time" />
+            <TableColumn fx:id="colStatus" prefWidth="155.0" text="Login_Status" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tbluser" layoutX="28.0" layoutY="54.0" opacity="0.87" prefHeight="354.0" prefWidth="490.0" visible="false">
+        <columns>
+          <TableColumn fx:id="coluserNo" prefWidth="41.0" text="No" />
+          <TableColumn fx:id="colUserName" prefWidth="129.0" text="User_Name" />
+            <TableColumn fx:id="colPassword" prefWidth="133.0" text="PassWord" />
+            <TableColumn fx:id="colLocation" prefWidth="186.0" text="Img_Location" />
+        </columns>
+      </TableView>
+      <Circle fx:id="Userprofile" fill="#ebebeb92" layoutX="600.0" layoutY="149.0" radius="75.0" stroke="#f5f5f5" strokeType="INSIDE" />
+      <Label fx:id="lblUserName" alignment="CENTER" layoutX="519.0" layoutY="229.0" prefHeight="32.0" prefWidth="175.0" text="Hello" textFill="#f5f0f0">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="422.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.CourseWiseStudentController">
+   <children>
+      <ImageView fitHeight="422.0" fitWidth="697.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/background.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbltitle" alignment="CENTER" prefHeight="51.0" prefWidth="697.0" text="Registration Student">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#6610c3" />
+                  <Stop color="#d01414" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbldescription" alignment="CENTER" layoutY="57.0" prefHeight="19.0" prefWidth="697.0" text="------------------Course Name-----------------">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#6610c3" />
+                  <Stop color="#d90d1f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bell MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblregistrationStudent" layoutX="15.0" layoutY="93.0" opacity="0.78" prefHeight="303.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="colno" prefWidth="36.0" text="NO" />
+            <TableColumn fx:id="colreg" prefWidth="73.0" text="Reg_No" />
+          <TableColumn fx:id="colid" prefWidth="83.0" text="Student_ID" />
+            <TableColumn fx:id="colsname" prefWidth="112.0" text="Student_Name" />
+            <TableColumn fx:id="colcid" prefWidth="99.0" text="Course_ID" />
+            <TableColumn fx:id="colcname" prefWidth="130.0" text="Course_Name" />
+            <TableColumn fx:id="colregdate" prefWidth="133.0" text="Register_Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
